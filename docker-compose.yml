@@ -21,7 +21,7 @@ services:
       - REDIS_PORT=6379
       - REDIS_PASSWORD=${REDIS_PASSWORD}     
       - REDIS_USER=${REDIS_USER}
-      - SEARXNG_REDIS_URL=${SEARXNG_REDIS_URL}
+      #- SEARXNG_REDIS_URL=${SEARXNG_REDIS_URL}
 
       # Generate this with: openssl rand -hex 32
       - SEARXNG_SECRET_KEY=${SEARXNG_SECRET_KEY}
@@ -36,7 +36,7 @@ services:
       - SEARXNG_HTTP_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN=${SEARXNG_ALLOWED_ORIGINS}
 
       # User Agent
-      - SEARXNG_HTTP_HEADERS_USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      #- SEARXNG_HTTP_HEADERS_USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
        
     logging:
       driver: "json-file"
