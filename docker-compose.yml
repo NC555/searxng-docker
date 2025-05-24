@@ -11,10 +11,12 @@ services:
     volumes:
       - ./searxng:/etc/searxng:rw
     environment:
+      # Basic Configuration
       - SEARXNG_BASE_URL=${SEARXNG_HOSTNAME}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
 
+      # Redis Configuration (using your existing coolify-redis)
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=6379
       - REDIS_PASSWORD=${REDIS_PASSWORD}     
@@ -22,8 +24,11 @@ services:
 
       # Generate this with: openssl rand -hex 32
       - SEARXNG_SECRET_KEY=${SEARXNG_SECRET_KEY}
-      - SEARXNG_LIMITER=true
       - SEARXNG_IMAGE_PROXY=true
+
+      # Bot Protection
+      - SEARXNG_LIMITER=true
+      - SEARXNG_BOT_PROTECTION=true
 
        # CORS settings
       - SEARXNG_CORS_ALLOWED_ORIGINS=${SEARXNG_ALLOWED_ORIGINS_ARRAY}
