@@ -36,12 +36,7 @@ services:
 
       # User Agent
       - SEARXNG_HTTP_HEADERS_USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
-      
-      # Redis URL format
-      - SEARXNG_REDIS_URL=redis://${REDIS_USER}:${REDIS_PASSWORD}@${REDIS_HOST}:6379/0
-      # Limiter settings
-      - SEARXNG_LIMITER_CONFIG='{"client.ip": {"limit": 25, "period": 24}, "client.search": {"limit": 10, "period": 1}}'
-      
+       
     logging:
       driver: "json-file"
       options:
