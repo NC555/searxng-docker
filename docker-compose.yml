@@ -17,6 +17,10 @@ services:
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
 
       # Redis Configuration (using your existing coolify-redis)
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}     
+      - REDIS_USER=${REDIS_USER}
       - SEARXNG_REDIS_URL=${SEARXNG_REDIS_URL}
 
       # Generate this with: openssl rand -hex 32
