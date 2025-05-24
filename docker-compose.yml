@@ -11,7 +11,7 @@ services:
     volumes:
       - ./searxng:/etc/searxng:rw
     environment:
-      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
 
